@@ -1,0 +1,2 @@
+DB=your-database-url?retryWrites=true&w=majority
+PORT=your-port-number
