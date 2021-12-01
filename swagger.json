@@ -1,0 +1,81 @@
+
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Assignment for creating a small server application with Node.js.",
+    "version": "1.0.0",
+    "title": "BACKEND ASSIGNMENT - NEOTECH SOLUTIONS",
+    "termsOfService": "https://github.com/key-joshua/neotechsolutions-backend-assignment/README.md ",
+    "contact": { "email": "k.joshua855@gmail.com" }
+  },
+
+  "host": "localhost:3000",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Initial Route",
+      "description": "Initial/Fake GET Route"
+    },
+    
+    {
+      "name": "Employees Route",
+      "description": "Initial/Fake GET Route"
+    }
+  ],
+  
+  "schemes": ["http","https"],
+  "consumes": ["application/json", "none"],
+  "produces": [ "application/json", "none"],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [ "Initial Route"],
+        "summary": " (Handle Intial/Fake GET Route)",
+        "description": "By the use of initial/fake GET endpoint, you will be able to see welcome message ( Welcome to Neotech Solutions Backend )",
+        "responses": { "200": { "description": "Success. ( Welcome to Neotech Solutions Backend )" }, "404": { "description": "Not Found." }}
+      }
+    },
+
+    "/employees/create-employee": {
+      "post": {
+        "tags": [ "Employees Route"],
+        "summary": " (Create Employee POST Route)",
+        "description": "By the use of this POST endpoint, you can create employee in our database",
+        "responses": { "201": { "description": "Created." }, "400": { "description": "Bad Request." }},
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Request Payload",
+            "schema": { "$ref": "#/definitions/createEmployeeSchema" }
+          }
+        ]
+      }
+    }
+  },
+
+  "definitions": {
+    "createEmployeeSchema": {
+      "type": "object",
+      "properties": {
+        "name":  { "type": "string", "required": true },
+        "email":  { "type": "string", "format": "email", "required": true },
+        "phone":  { "type": "string", "example": "+250789612345", "required": true },
+        "employmentDate":  { "type": "string", "format": "date-time", "example": "2021-01-01",  "required": true },
+        "birthDate":  { "type": "string", "format": "date-time", "example": "1990-01-01",  "required": true },
+        "home":  {  "type": "array", "items": { "type": "object",
+            "properties": {
+              "city":  { "type": "string", "required": true },
+              "ZIPCode":  { "type": "string", "required": true },
+              "AddressLine1":  { "type": "string", "required": true },
+              "AddressLine2":  { "type": "string", "required": true }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+     

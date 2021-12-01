@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  neotechsolutions-backend-assignment-container:
+    image: neotechsolutions-backend-assignment-image
+    container_name: neotechsolutions-backend-assignment-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"

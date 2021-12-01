@@ -2,7 +2,10 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
+import swaggerUi from 'swagger-ui-express';
+
 import allRoutes from './routes';
+import apiDocumentation from '../swagger.json';
 
 dotenv.config();
 const app = express();
@@ -14,6 +17,7 @@ mongoose.connection.on('error', (err) => { console.log(`Error at mongo: ${err}`)
 mongoose.connection.on('connected', () => { console.log('Connected to mongoDB'); });
 
 app.use('/api', allRoutes);
+app.use(`/api/documentation`, swaggerUi.serve, swaggerUi.setup(apiDocumentation));
 app.get('**', (req, res) => res.status(200).json({ status: 200, message: `Welcome to Neotech Solutions Backend` }));
 
 app.listen(process.env.PORT, () => { console.log('Server Started on', process.env.PORT); });
