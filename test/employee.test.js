@@ -68,7 +68,7 @@ describe('TEST DELETE EMPLOYEE API', async () => {
     await employeesHelper.destroyEmployee('email', dummyData[0].email);
   });
 
-  it('User should be able to delete employee', (done) => {
+  it('User should not be able to delete unexist employee', (done) => {
     router()
       .delete(`/api/employees/delete-employee/${data._id}`)
       .end((error, response) => {

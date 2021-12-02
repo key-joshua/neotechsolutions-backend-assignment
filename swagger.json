@@ -9,7 +9,7 @@
     "contact": { "email": "k.joshua855@gmail.com" }
   },
 
-  "host": "localhost:3000",
+  "host": "neotechsolutions-backend.herokuapp.com",
   "basePath": "/api",
   "tags": [
     {

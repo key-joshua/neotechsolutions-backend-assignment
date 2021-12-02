@@ -10,7 +10,7 @@
 Assignment for creating a small server application with Node.js by assignment purpose
 #### This is the Hosted link of the backend challenge [Access endpoint Direct]
 
-https://neotechsolutions-backend-assignment.herokuapp.com
+https://neotechsolutions-backend.herokuapp.com
 
 #### This is the Github repository link of the frontend challenge 
 
@@ -38,7 +38,7 @@ Before we get started Remember to take  :coffee:   :pizza:  and :dancer:  When Y
 
 #### TABLE OF API ENDPOINTS SPECIFICATION AND DESCRIPTION
 
-- Version API using URL versioning starting with https://neotechsolutions-backend-assignment.herokuapp.com/api/path  
+- Version API using URL versioning starting with https://neotechsolutions-backend.herokuapp.com/api/path  
 
 
 |NO  | VERBS  | ENDPOINTS                                  | STATUS       | ACCESS      | DESCRIPTION                                |
@@ -62,7 +62,7 @@ Other tools and technologies used in development of this application are;
 
 ## GETTING TEST WITH PROJECT GLOBALLY
 
-- [API Swagger Documentation](https://neotechsolutions-backend-assignment.herokuapp.com/api/v1/documentation)
+- [API Swagger Documentation](https://neotechsolutions-backend.herokuapp.com/api/v1/documentation)
 
 ## GETTING TEST WITH PROJECT LOCALLY
 
