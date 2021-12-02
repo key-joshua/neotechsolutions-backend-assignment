@@ -7,12 +7,12 @@
     "lint": "eslint ./src",
     "kill": "Taskkill /IM node.exe /F",
     "start": "nodemon --exec babel-node ./src/index.js",
-    "test-dev": "nyc mocha --require @babel/register 'test/**/**test.js' --exit",
-    "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test | coveralls",
-    "test-pro": "cross-env NODE_ENV=test nyc mocha --require @babel/register 'test/**/**test.js' --timeout 500000 --exit",
-    "test": "mocha --require @babel/register 'test/**/**test.js' --exit",
+
     "test-coverage": "nyc mocha --require @babel/register test --exit",
-    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+
+    "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test | coveralls",
+    "test": "nyc mocha --require @babel/register 'test/**/**test.js' --timeout 500000 --exit"
   },
   "repository": {
     "type": "git",
