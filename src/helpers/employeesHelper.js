@@ -22,6 +22,36 @@ class UserHelper {
     });
     return data;
   }
+
+  /**
+   * Check a employee into employees table in database.
+   * @param {string} attribute table column.
+   * @param {string} value employees details.
+   * @returns {object} exist employees.
+   */
+  static async employeeExist(attribute, value) {
+    const data = await EmployeeSchema.findOne({ [attribute]: value });
+    return data;
+  }
+
+  /**
+   * Destroy a email.
+   * @param {string} attribute table column.
+   * @param {string} value a employee email.
+   * @returns {string} an output.
+   */
+  static async destroyEmployee(attribute, value) {
+    await EmployeeSchema.deleteOne({ [attribute]: value });
+  }
+
+  /**
+   * ban a id.
+   * @param {string} value a employee id.
+   * @returns {string} an output.
+   */
+  static async banEmployee(value) {
+    await EmployeeSchema.updateOne({ _id: value }, { $set: { banned: true } });
+  }
 }
 
 export default UserHelper;

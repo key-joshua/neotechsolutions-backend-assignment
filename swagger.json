@@ -14,12 +14,12 @@
   "tags": [
     {
       "name": "Initial Route",
-      "description": "Initial/Fake GET Route"
+      "description": "Initial/Fake Endpoint | GET Route"
     },
     
     {
       "name": "Employees Route",
-      "description": "Initial/Fake GET Route"
+      "description": "Employee/s endpoitns | POST ROUTE, DELETE ROUTE, UPDATE ROUTE, GET Route"
     }
   ],
   
@@ -27,7 +27,8 @@
   "consumes": ["application/json", "none"],
   "produces": [ "application/json", "none"],
   "paths": {
-    "/": {
+
+    "/kslowpamf": {
       "get": {
         "tags": [ "Initial Route"],
         "summary": " (Handle Intial/Fake GET Route)",
@@ -47,8 +48,26 @@
             "in": "body",
             "name": "body",
             "required": true,
-            "description": "Request Payload",
+            "description": "Request Payload/Request Body",
             "schema": { "$ref": "#/definitions/createEmployeeSchema" }
+          }
+        ]
+      }
+    },
+
+    "/employees/delete-employee/{employeeId}": {
+      "delete": {
+        "tags": [ "Employees Route"],
+        "summary": " (Delete Employee DELETE Route)",
+        "description": "By the use of this DELETE endpoint, you can delete employee in our database",
+        "responses": { "200": { "description": "Ok." }, "404": { "description": "Not Found." }},
+        "parameters": [
+          {
+            "in": "path",
+            "name": "employeeId",
+            "type": "string",
+            "required": true,
+            "description": "Employee ID in Params"
           }
         ]
       }
