@@ -8,9 +8,12 @@
 # BACKEND ASSIGNMENT - NEOTECH SOLUTIONS
 
 Assignment for creating a small server application with Node.js by assignment purpose
-#### This is the Hosted link of the backend challenge [Access endpoint Direct]
+#### This is the Hosted link of the backend challenge
 
 https://neotechsolutions-backend.herokuapp.com
+#### This is the Hosted link of testing swagger documentation
+
+https://neotechsolutions-backend.herokuapp.com/api/documentation
 
 #### This is the Github repository link of the frontend challenge 
 
@@ -62,7 +65,7 @@ Other tools and technologies used in development of this application are;
 
 ## GETTING TEST WITH PROJECT GLOBALLY
 
-- [API Swagger Documentation](https://neotechsolutions-backend.herokuapp.com/api/v1/documentation)
+- [API Swagger Documentation](https://neotechsolutions-backend.herokuapp.com/api/documentation)
 
 ## GETTING TEST WITH PROJECT LOCALLY
 
