@@ -1,4 +1,3 @@
-
 /**
 * This Pagination Class contain paginateData method (paginateData function) required to handle
 * The method return data.
@@ -22,4 +21,4 @@ class Pagination {
   }
 }
 
-module.exports= Pagination;
+module.exports = Pagination;
