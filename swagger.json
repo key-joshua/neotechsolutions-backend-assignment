@@ -9,7 +9,7 @@
     "contact": { "email": "k.joshua855@gmail.com" }
   },
 
-  "host": "neotechsolutions-backend.herokuapp.com",
+  "host": "localhost:3000",
   "basePath": "/api",
   "tags": [
     {
@@ -47,6 +47,7 @@
           {
             "in": "body",
             "name": "body",
+            "type": "object",
             "required": true,
             "description": "Request Payload/Request Body",
             "schema": { "$ref": "#/definitions/createEmployeeSchema" }
@@ -68,6 +69,78 @@
             "type": "string",
             "required": true,
             "description": "Employee ID in Params"
+          }
+        ]
+      }
+    },
+
+    "/employees/update-employee/{employeeId}": {
+      "patch": {
+        "tags": [ "Employees Route"],
+        "summary": " (Update Employee UPDATE Route)",
+        "description": "By the use of this UPDATE endpoint, you can update employee details from our database",
+        "responses": { "200": { "description": "Ok." }, "404": { "description": "Not Found." }},
+        "parameters": [
+          {
+            "in": "path",
+            "name": "employeeId",
+            "type": "string",
+            "required": true,
+            "description": "Employee ID in Params"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "type": "object",
+            "required": true,
+            "description": "Request Payload/Request Body",
+            "schema": { "$ref": "#/definitions/createEmployeeSchema" }
+          }
+        ]
+      }
+    },
+    
+    "/employees/view-employees?page={page}&limit={limit}": {
+      "get": {
+        "tags": [ "Employees Route"],
+        "summary": " (Veiw Employees GET Route)",
+        "description": "By the use of this GET endpoint, you can view employees from our database",
+        "responses": { "200": { "description": "Ok." }, "404": { "description": "Not Found." }},
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "type": "integer",
+            "description": "parsing a page number"
+          },
+          {
+            "in": "path",
+            "name": "limit",
+            "type": "integer",
+            "description": "parsing a limit of data per page"
+          }
+        ]
+      }
+    },
+      
+    "/employees/view-deleted-employees?page={page}&limit={limit}": {
+      "get": {
+        "tags": [ "Employees Route"],
+        "summary": " (View Deleted Employees GET Route)",
+        "description": "By the use of this GET endpoint, you can view all deleted employees from our database",
+        "responses": { "200": { "description": "Ok." }, "404": { "description": "Not Found." }},
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page",
+            "type": "integer",
+            "description": "parsing a page number"
+          },
+          {
+            "in": "path",
+            "name": "limit",
+            "type": "integer",
+            "description": "parsing a limit of data per page"
           }
         ]
       }

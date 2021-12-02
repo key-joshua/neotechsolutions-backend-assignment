@@ -44,10 +44,13 @@ Before we get started Remember to take  :coffee:   :pizza:  and :dancer:  When Y
 - Version API using URL versioning starting with https://neotechsolutions-backend.herokuapp.com/api/path  
 
 
-|NO  | VERBS  | ENDPOINTS                                  | STATUS       | ACCESS      | DESCRIPTION                                |
-|----|--------|--------------------------------------------|--------------|-------------|--------------------------------------------|
-| 1  | POST   | /api/employees/create-employee             | 201 CREATED  | public      | create an employee with employee details   |
-| 2  | DELETE | /api/employees/delete-employee/employeeId  | 200 OK       | public      | delete an employee by employee id          |
+|NO  | VERBS  | ENDPOINTS                                             | STATUS       | ACCESS      | DESCRIPTION                                |
+|----|--------|-------------------------------------------------------|--------------|-------------|--------------------------------------------|
+| 1  | POST   | /api/employees/create-employee                        | 201 CREATED  | public      | create an employee with employee details   |
+| 2  | DELETE | /api/employees/delete-employee/employeeId             | 200 OK       | public      | delete an employee by employee id          |
+| 3  | PATCH  | /api/employees/update-employee/employeeId             | 200 OK       | public      | update an employee by employee id          |
+| 4  | GET    | /api/employees/view-employees?page=1&limit=1          | 200 OK       | public      | view all employees                         |
+| 5  | GET    | /api/employees/view-deleted-employees?page=1&limit=1  | 200 OK       | public      | view all deleted employees                 |
 
 
 #### Other Tools

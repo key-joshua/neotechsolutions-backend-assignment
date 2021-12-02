@@ -19,7 +19,8 @@ const data = [
     phone: "+250789612345",
     employmentDate: "2021-12-01",
     birthDate: "1996-01-01",
-  }
+  },
+  {}
 ];
 
 export default data;
