@@ -1,0 +1,6 @@
+coverage:
+  status:
+    project:
+      default: true
+  codecov:
+    token: d14efac9-52b2-45c6-8640-b907d8163482

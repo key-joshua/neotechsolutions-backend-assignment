@@ -1,3 +1,6 @@
 node_modules
 .vscode
 .env
+*.lcov
+.nyc_output
+coverage
