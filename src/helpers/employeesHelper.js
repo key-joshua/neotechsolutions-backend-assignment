@@ -104,22 +104,7 @@ class UserHelper {
    * @param {string} value value to be found.
    * @returns {object} a founded pending appointments.
    */
-  static async viewUnbannedEmployees(skip, start, attribute, value) {
-    const data = await EmployeeSchema.find({ [attribute]: value }).select("-banned").skip(start).limit(skip)
-      .sort({ updatedAt: -1 });
-
-    return data;
-  }
-
-  /**
-   * viewbannedEmployees by table column and value.
-   * @param {integer} skip limitation point.
-   * @param {integer} start start point.
-   * @param {string} attribute table column.
-   * @param {string} value value to be found.
-   * @returns {object} a founded pending appointments.
-   */
-  static async viewbannedEmployees(skip, start, attribute, value) {
+  static async viewAllEmployees(skip, start, attribute, value) {
     const data = await EmployeeSchema.find({ [attribute]: value }).select("-banned").skip(start).limit(skip)
       .sort({ updatedAt: -1 });
 

@@ -27,6 +27,20 @@ describe('TEST CREATE EMPLOYEE API', async () => {
       });
   });
 
+  it('User should be able to create employee', (done) => {
+    router()
+      .post('/api/employees/create-employee')
+      .send(dummyData[4])
+      .end((error, response) => {
+        data = response.body.data;
+        expect(response).to.have.status(CREATED);
+        expect(response.body).to.be.a('object');
+        expect(response.body.message).to.be.a('string');
+        expect(response.body).to.have.property('data');
+        done(error);
+      });
+  });
+
   it('User should not be able to create employee with same email', (done) => {
     router()
       .post('/api/employees/create-employee')
@@ -55,7 +69,43 @@ describe('TEST CREATE EMPLOYEE API', async () => {
 describe('TEST VIEW EMPLOYEES API', async () => {
   it('User should be able to view employees', (done) => {
     router()
+      .get('/api/employees/view-employees')
+      .end((error, response) => {
+        expect(response).to.have.status(OK);
+        expect(response.body).to.be.a('object');
+        expect(response.body.message).to.be.a('string');
+        expect(response.body).to.have.property('data');
+        done(error);
+      });
+  });
+
+  it('User should be able to view employees', (done) => {
+    router()
       .get('/api/employees/view-employees?page=1&limit=1')
+      .end((error, response) => {
+        expect(response).to.have.status(OK);
+        expect(response.body).to.be.a('object');
+        expect(response.body.message).to.be.a('string');
+        expect(response.body).to.have.property('data');
+        done(error);
+      });
+  });
+
+  it('User should be able to view employees', (done) => {
+    router()
+      .get('/api/employees/view-employees?page=2&limit=1')
+      .end((error, response) => {
+        expect(response).to.have.status(OK);
+        expect(response.body).to.be.a('object');
+        expect(response.body.message).to.be.a('string');
+        expect(response.body).to.have.property('data');
+        done(error);
+      });
+  });
+
+  it('User should be able to view employees', (done) => {
+    router()
+      .get('/api/employees/view-employees?page=3&limit=1')
       .end((error, response) => {
         expect(response).to.have.status(OK);
         expect(response.body).to.be.a('object');
@@ -131,6 +181,7 @@ describe('TEST DELETE, VEIW DELETED EMPLOYEES AND UPDATE EMPLOYEE API', async ()
 
   after(async () => {
     await employeesHelper.destroyEmployee('email', dummyData[0].email);
+    await employeesHelper.destroyEmployee('email', dummyData[4].email);
   });
 
   it('User should not be able to delete unexist employee', (done) => {

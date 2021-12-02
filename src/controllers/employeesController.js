@@ -100,7 +100,7 @@ class EmployeesController {
   static async viewUnbannedEmployees(req, res, next) {
     try {
       const { start, end, pages, skip, paginate } = await pagination.paginateData(req.query);
-      const fetchedData = await employeesHelper.viewUnbannedEmployees(skip, start, 'banned', false);
+      const fetchedData = await employeesHelper.viewAllEmployees(skip, start, 'banned', false);
       const countedData = await employeesHelper.countData('banned', false);
 
       const allDatata = fetchedData;
@@ -129,7 +129,7 @@ class EmployeesController {
   static async viewbannedEmployees(req, res, next) {
     try {
       const { start, end, pages, skip, paginate } = await pagination.paginateData(req.query);
-      const fetchedData = await employeesHelper.viewUnbannedEmployees(skip, start, 'banned', true);
+      const fetchedData = await employeesHelper.viewAllEmployees(skip, start, 'banned', true);
       const countedData = await employeesHelper.countData('banned', true);
 
       const allDatata = fetchedData;
