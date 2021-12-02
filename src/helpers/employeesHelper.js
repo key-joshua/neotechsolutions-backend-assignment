@@ -48,7 +48,6 @@ class UserHelper {
       {
         $set: {
           name: body.name || existEmployee.name,
-          email: body.email || existEmployee.email,
           phone: body.phone || existEmployee.phone,
           employmentDate: body.employmentDate || existEmployee.employmentDate,
           birthDate: body.birthDate || existEmployee.birthDate,

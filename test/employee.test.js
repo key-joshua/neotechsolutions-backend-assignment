@@ -70,7 +70,7 @@ describe('TEST UPDATE EMPLOYEE API', async () => {
   it('User should be able to update employee', (done) => {
     router()
       .patch(`/api/employees/update-employee/${data._id}`)
-      .send(dummyData[0])
+      .send(dummyData[2])
       .end((error, response) => {
         expect(response).to.have.status(OK);
         expect(response.body).to.be.a('object');
@@ -83,7 +83,7 @@ describe('TEST UPDATE EMPLOYEE API', async () => {
   it('User should not be able to update employee with empty body', (done) => {
     router()
       .patch(`/api/employees/update-employee/${data._id}`)
-      .send(dummyData[2])
+      .send(dummyData[3])
       .end((error, response) => {
         expect(response).to.have.status(BAD_REQUEST);
         expect(response.body).to.be.a('object');
@@ -120,7 +120,7 @@ describe('TEST DELETE, VEIW DELETED EMPLOYEES AND UPDATE EMPLOYEE API', async ()
   it('User should not be able to update deleted employee', (done) => {
     router()
       .patch(`/api/employees/update-employee/${data._id}`)
-      .send(dummyData[0])
+      .send(dummyData[2])
       .end((error, response) => {
         expect(response).to.have.status(NOT_FOUND);
         expect(response.body).to.be.a('object');
@@ -147,7 +147,7 @@ describe('TEST DELETE, VEIW DELETED EMPLOYEES AND UPDATE EMPLOYEE API', async ()
   it('User should not be able to update unexist employee', (done) => {
     router()
       .patch(`/api/employees/update-employee/${data._id}`)
-      .send(dummyData[0])
+      .send(dummyData[2])
       .end((error, response) => {
         expect(response).to.have.status(NOT_FOUND);
         expect(response.body).to.be.a('object');

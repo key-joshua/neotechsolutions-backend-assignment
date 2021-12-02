@@ -74,11 +74,6 @@ class EmployeesController {
       }
 
       let data = await employeesHelper.employeeExist('_id', req.params.employeeId);
-      if (data.email === req.body.email) {
-        responseHelper.handleError(CONFLICT, 'Email already exist.');
-        return responseHelper.response(res);
-      }
-
       if (!data || data.banned === true) {
         responseHelper.handleError(NOT_FOUND, `Employee with id ${req.params.employeeId} not found.`);
         return responseHelper.response(res);

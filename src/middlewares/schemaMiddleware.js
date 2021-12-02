@@ -80,11 +80,6 @@ const validateUpdateEmployee = (req, res, next) => {
           'any.required': 'name is required',
           'string.empty': 'name is not allowed to be empty',
         }),
-      email: Joi.string().email().messages({
-        'any.required': 'email is required',
-        'string.empty': 'email is not allowed to be empty',
-        'string.email': 'email must be a valid email',
-      }),
       phone: customJoi.string().phoneNumber({ format: 'international', strict: true }).messages({
         'any.required': 'phone is required',
         'string.empty': 'phone is not allowed to be empty',
