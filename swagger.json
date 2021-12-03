@@ -18,7 +18,7 @@
     },
     
     {
-      "name": "Employees Route",
+      "name": "Employees Routes",
       "description": "Employee/s endpoitns | POST ROUTE, DELETE ROUTE, UPDATE ROUTE, GET Route"
     }
   ],
