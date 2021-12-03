@@ -39,7 +39,7 @@
 
     "/employees/create-employee": {
       "post": {
-        "tags": [ "Employees Route"],
+        "tags": [ "Employees Routes"],
         "summary": " (Create Employee POST Route)",
         "description": "By the use of this POST endpoint, you can create employee in our database",
         "responses": { "201": { "description": "Created." }, "400": { "description": "Bad Request." }},
@@ -58,7 +58,7 @@
 
     "/employees/delete-employee/{employeeId}": {
       "delete": {
-        "tags": [ "Employees Route"],
+        "tags": [ "Employees Routes"],
         "summary": " (Delete Employee DELETE Route)",
         "description": "By the use of this DELETE endpoint, you can delete employee in our database",
         "responses": { "200": { "description": "Ok." }, "404": { "description": "Not Found." }},
@@ -76,7 +76,7 @@
 
     "/employees/update-employee/{employeeId}": {
       "patch": {
-        "tags": [ "Employees Route"],
+        "tags": [ "Employees Routes"],
         "summary": " (Update Employee UPDATE Route)",
         "description": "By the use of this UPDATE endpoint, you can update employee details from our database",
         "responses": { "200": { "description": "Ok." }, "404": { "description": "Not Found." }},
@@ -102,7 +102,7 @@
     
     "/employees/view-employees?page={page}&limit={limit}": {
       "get": {
-        "tags": [ "Employees Route"],
+        "tags": [ "Employees Routes"],
         "summary": " (Veiw Employees GET Route)",
         "description": "By the use of this GET endpoint, you can view employees from our database",
         "responses": { "200": { "description": "Ok." }, "404": { "description": "Not Found." }},
@@ -125,7 +125,7 @@
       
     "/employees/view-deleted-employees?page={page}&limit={limit}": {
       "get": {
-        "tags": [ "Employees Route"],
+        "tags": [ "Employees Routes"],
         "summary": " (View Deleted Employees GET Route)",
         "description": "By the use of this GET endpoint, you can view all deleted employees from our database",
         "responses": { "200": { "description": "Ok." }, "404": { "description": "Not Found." }},
