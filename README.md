@@ -13,7 +13,7 @@ https://neotechsolutions-backend.herokuapp.com
 
 https://neotechsolutions-backend.herokuapp.com/api/documentation
 
-#### This is the Github repository link of the frontend challenge 
+#### This is the Github repository link of the github challenge 
 
 https://github.com/key-joshua/neotechsolutions-backend-assignment
 
