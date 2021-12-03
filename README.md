@@ -7,7 +7,7 @@
 
 # BACKEND ASSIGNMENT - NEOTECH SOLUTIONS
 
-Assignment for creating a small server application with Node.js by assignment purpose
+Assignment for creating a small server application with Node.js by assignment purpose.
 #### This is the Hosted link of the backend challenge
 
 https://neotechsolutions-backend.herokuapp.com
